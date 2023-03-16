@@ -1,3 +1,5 @@
-cd .\Scripts
+@echo off
 
-python .\Main.py
+python %~dp0\Scripts\Main.py
+
+pause

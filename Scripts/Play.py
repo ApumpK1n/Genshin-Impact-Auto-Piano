@@ -7,7 +7,7 @@ class Play:
     def __init__(self):
         pass
 
-    def PlayStave(self, stave):
+    def PlayStave(self, stave, onEnd):
 
         bitTime = 60.0 / stave.Bpm 
 
@@ -20,3 +20,5 @@ class Play:
                 pyautogui.press(node.value, presses=len(node.value), interval=0.05)
             elif node.type == Config.Space:
                 time.sleep(bitTime)
+        
+        onEnd()
