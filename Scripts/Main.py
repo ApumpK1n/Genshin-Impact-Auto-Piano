@@ -5,28 +5,28 @@ import tkinter.filedialog
 import tkinter
 import time
 
+
+
+txtTypeFilter = [('txt' ,'.txt')]
+window = tkinter.Tk()
+window.withdraw()
+Parser = Parse.Parse()
+Player = Play.Play()
+Enable = True
+
 def OnEnd():
     global Enable
     Enable = True
 
 
 def Main():
-    Parser = Parse.Parse()
     stave = Parser.ParseFile(Config.MusicPath)
-
-    Player = Play.Play()
     Player.PlayStave(stave, onEnd=OnEnd)
 
 def ShowInfo():
     print('10 seconds for ready')
     time.sleep(10)
     print('\nStart~\n')
-
-txtTypeFilter = [('txt' ,'.txt')]
-window = tkinter.Tk()
-window.withdraw()
-
-Enable = True
 
 if __name__ == '__main__':
     while Enable:
